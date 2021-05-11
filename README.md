@@ -1,5 +1,5 @@
 # StudentManager
-基于spring、springMVC和mybatis框架制作的JavaWeb项目，小小小白的第一个项目用来应付毕业设计，希望得到大佬们的指点。
+基于spring、springMVC和mybatis框架制作的JavaWeb项目，小小小白的第一个项目用来应付毕业设计，希望得到大佬们的指点（轻点喷）。
 
 前端：jsp、html、css、javascript、jquery、ajax等
 
