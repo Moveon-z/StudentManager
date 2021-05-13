@@ -58,4 +58,15 @@ public class StudentController {
         studentService.addCourse(sid,cid);
     }
 
+    @RequestMapping("/updateStudentInfo")
+    public void updateStudentInfo(HttpServletRequest request,HttpServletResponse response){
+        String sid = request.getParameter("sid");
+        String name = request.getParameter("name");
+        String age = request.getParameter("age");
+        String cls = request.getParameter("cls");
+        String birthday = request.getParameter("birthday");
+        String sex = request.getParameter("sex");
+        String num = request.getParameter("num");
+        studentService.updateStudentInfo(sid,name,age,cls,birthday,sex,num);
+    }
 }

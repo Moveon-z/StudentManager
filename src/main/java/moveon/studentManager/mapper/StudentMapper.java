@@ -45,4 +45,17 @@ public interface StudentMapper {
             "\tstu_course(sid,cid,score)\n" +
             "VALUES(${sid},${cid},NULL)")
     void insertCourse(@Param("sid") String sid,@Param("cid") String cid);
+
+    /**
+     * 完善学生信息
+     * @param sid
+     * @param name
+     * @param age
+     * @param cls
+     * @param birthday
+     * @param sex
+     * @param num
+     */
+    @Insert("INSERT INTO student(sid,NAME,age,cls,birthday,sex,num)VALUES(${sid},'${name}',${age},'${cls}','${birthday}','${sex}',${num})ON DUPLICATE KEY UPDATE name='${name}',age=${age},cls='${cls}',birthday='${birthday}',sex='${sex}',num=${num}")
+    void updateStudentInfo(@Param("sid") String sid,@Param("name") String name,@Param("age") String age,@Param("cls") String cls,@Param("birthday") String birthday,@Param("sex") String sex,@Param("num") String num);
 }

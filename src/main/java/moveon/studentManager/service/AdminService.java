@@ -95,4 +95,11 @@ public interface AdminService {
      * @return
      */
     List<Student> findOneStudent(String sname);
+
+    /**
+     * 设置课程的教师
+     * @param tid
+     * @param cid
+     */
+    void addCourseTeacher(String tid,String cid);
 }

@@ -61,6 +61,7 @@
 
 <div id="topBox" class="aaa">
     <div class="admin">
+        <input type="button" class="btn-primary" value="更新个人信息" onclick="updateTeacherInfoOnclick()">
         <input type="button" class="btn-primary" value="查询学生" onclick="findOneStudentOnclick();">
         <i class="fa fa-user-circle-o" aria-hidden="true"></i>
         <b>欢迎 ${sessionScope.tname} 老师</b>
@@ -245,6 +246,31 @@
                 }
             })
         }
+    }
+
+    function updateTeacherInfoOnclick() {
+        var age = window.prompt("请输入你的年龄");
+        var birthday = window.prompt("请输入你的生日");
+        var sex = window.prompt("请输入你的性别");
+        var course = window.prompt("请输入你的课程");
+        $.ajax({
+            url: "updateTeacherInfo",
+            type: "POST",
+            data: {
+                tid:${sessionScope.tid},
+                tname: '${sessionScope.tname}',
+                age: age,
+                birthday: birthday,
+                sex: sex,
+                course: course
+            },
+            success: function () {
+                alert("更新成功")
+            },
+            error: function () {
+                alert("更新失败")
+            }
+        })
     }
 </script>
 

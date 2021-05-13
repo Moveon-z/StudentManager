@@ -65,6 +65,7 @@
     <!-- 顶部导航栏 -->
     <div id="topBox" class="aaa">
         <div class="admin">
+            <input type="button" value="设置课程教师" class="btn-primary" onclick="addCourseTeacherOnclick()">
             <input type="button" value="查询课程信息" class="btn-primary" onclick="findCourseOnclick()">
             <input type="button" value="查询教师信息" class="btn-primary" onclick="findTeacherOnclick()">
             <input type="button" value="查询学生信息" class="btn-primary" onclick="findStudentOnclick()">
@@ -244,6 +245,7 @@
         }
     }
 
+    //删除课程
     function delCourseTr(obj) {
         var cid = $(obj).parent().parent().children(".courseId").text()
         $.ajax({
@@ -258,6 +260,7 @@
         courseManagerFun();
     }
 
+    //删除教师
     function delTeacherTr(obj) {
         /*var table = obj.parentNode.parentNode.parentNode.parentNode;
         var tr = obj.parentNode.parentNode;*/
@@ -274,6 +277,7 @@
         managerTeacherFun();
     }
 
+    //删除学生
     function delStudentTr(obj) {
         /*var table = obj.parentNode.parentNode.parentNode;
         var tr = obj.parentNode.parentNode;*/
@@ -388,8 +392,18 @@
         })
     }
 
+    //添加课程按钮单击
     function insertCourseOnclick() {
-        courseManagerFun();
+        $("#topBody").html("");
+        $("#topBody").append("<tr>\n" +
+            "                        <th>课程编号</th>\n" +
+            "                        <th>课程名称</th>\n" +
+            "                        <th>课程教师</th>\n" +
+            "                        <th>课程位置</th>\n" +
+            "                        <th>课程时间</th>\n" +
+            "                        <th>操作</th>\n" +
+            "                    </tr>")
+        $("#mainTbody").html("")
         $("#mainTbody").append("<tr>\n" +
             "                        <td><input type=\"text\" id=\"CourseIdInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"CourseNameInput\"></td>\n" +
@@ -400,11 +414,22 @@
             "                    </tr>")
     }
 
+    //添加教师按钮单击
     function insertTeacherOnclick() {
-        managerTeacherFun();
+        $("#topBody").html("");
+        $("#topBody").append("<tr>\n" +
+            "                        <th>教师id</th>\n" +
+            "                        <th>教师姓名</th>\n" +
+            "                        <th>教师年龄</th>\n" +
+            "                        <th>教师生日</th>\n" +
+            "                        <th>教师性别</th>\n" +
+            "                        <th>教授课程</th>\n" +
+            "                        <th>操作</th>\n" +
+            "                    </tr>");
+        $("#mainTbody").html("");
         $("#mainTbody").append("<tr>\n" +
             "                        <td><input type=\"text\" id=\"tidInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tameInput\"></td>\n" +
+            "                        <td><input type=\"text\" id=\"tnameInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"tageInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"tbirthdayInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"tsexInput\"></td>\n" +
@@ -413,8 +438,20 @@
             "                    </tr>")
     }
 
+    //添加学生按钮单击
     function insertStudentOnclick() {
-        managerStudentFun();
+        $("#topBody").html("");
+        $("#topBody").append("<tr>\n" +
+            "                        <th>学生id</th>\n" +
+            "                        <th>学生姓名</th>\n" +
+            "                        <th>学生年龄</th>\n" +
+            "                        <th>学生班级</th>\n" +
+            "                        <th>学生生日</th>\n" +
+            "                        <th>学生性别</th>\n" +
+            "                        <th>学生学号</th>\n" +
+            "                        <th>操作</th>\n" +
+            "                    </tr>");
+        $("#mainTbody").html("");
         $("#mainTbody").append("<tr>\n" +
             "                        <td><input type=\"text\" id=\"sidInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"sameInput\"></td>\n" +
@@ -427,6 +464,7 @@
             "                    </tr>")
     }
 
+    //添加课程信息
     function insertCourseInfo() {
         var courseId = $("#CourseIdInput").val();
         var courseName = $("#CourseNameInput").val();
@@ -444,11 +482,12 @@
         })
     }
 
+    //添加教师信息
     function insertTeacherInfo() {
         var tid = $("#tidInput").val();
         var tname = $("#tnameInput").val();
         var tage = $("#tageInput").val();
-        var tbirthday = $("#tbirthdayInpu").val();
+        var tbirthday = $("#tbirthdayInput").val();
         var tsex = $("#tsexInput").val();
         var tcourse = $("#tcourseInput").val();
         $.ajax({
@@ -462,6 +501,7 @@
         })
     }
 
+    //添加学生信息
     function insertStudentInfo() {
         var sid = $("#sidInput").val();
         var sname = $("#snameInput").val();
@@ -477,6 +517,23 @@
             success: function (result) {
                 alert(result)
                 managerStudentFun();
+            }
+        })
+    }
+
+    //设置课程的教师
+    function addCourseTeacherOnclick() {
+        var cid = window.prompt("请输入课程id");
+        var tid = window.prompt("请输入教师id");
+        $.ajax({
+            url: "addCourseTeacher",
+            type: "POST",
+            data: {tid: tid,cid: cid},
+            success: function () {
+                alert("设置成功")
+            },
+            error: function () {
+                alert("设置失败")
             }
         })
     }

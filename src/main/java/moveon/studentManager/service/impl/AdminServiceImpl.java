@@ -75,4 +75,9 @@ public class AdminServiceImpl implements AdminService {
     public List<Student> findOneStudent(String sname) {
         return adminMapper.findOneStudent(sname);
     }
+
+    @Override
+    public void addCourseTeacher(String tid, String cid) {
+        adminMapper.addCourseTeacher(tid,cid);
+    }
 }

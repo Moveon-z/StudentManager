@@ -115,4 +115,12 @@ public interface AdminMapper {
      */
     @Select("select * from student where name like '%${sname}%'")
     List<Student> findOneStudent(@Param("sname") String sname);
+
+    /**
+     * 设置课程的教师
+     * @param tid
+     * @param cid
+     */
+    @Insert("insert into tea_course(tid,cid)values(${tid},${cid})ON DUPLICATE KEY UPDATE tid=${tid},cid=${cid}")
+    void addCourseTeacher(@Param("tid") String tid,@Param("cid") String cid);
 }

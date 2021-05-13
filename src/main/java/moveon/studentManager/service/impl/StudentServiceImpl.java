@@ -29,4 +29,9 @@ public class StudentServiceImpl implements StudentService {
     public void addCourse(String sid, String cid) {
         mapper.insertCourse(sid,cid);
     }
+
+    @Override
+    public void updateStudentInfo(String sid, String name, String age, String cls, String birthday, String sex, String num) {
+        mapper.updateStudentInfo(sid,name,age,cls,birthday,sex,num);
+    }
 }

@@ -63,6 +63,7 @@
     <!-- 顶部导航栏 -->
     <div id="topBox" class="aaa">
         <div class="admin">
+            <input type="button" class="btn-primary" value="更新个人信息" onclick="updateStudentInfoOnclick()"
             <input type="button" class="btn-primary" value="查询课程" onclick="studentFindCourseOnclick()">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
             <b>欢迎 ${sessionScope.sname} 同学</b>
@@ -256,6 +257,34 @@
                 }
             })
         }
+    }
+
+    //完善学生信息
+    function updateStudentInfoOnclick() {
+        var age = window.prompt("请输入你的年龄");
+        var cls = window.prompt("请输入你的班级");
+        var birthday = window.prompt("请输入你的生日");
+        var sex = window.prompt("请输入你的性别");
+        var num = window.prompt("请输入你的学号");
+        $.ajax({
+            url: "updateStudentInfo",
+            type: "POST",
+            data: {
+                sid: ${sessionScope.sid},
+                name: ${sessionScope.sname},
+                age: age,
+                cls: cls,
+                birthday: birthday,
+                sex: sex,
+                num: num
+            },
+            success: function () {
+                alert("更新成功")
+            },
+            error: function () {
+                alert("更新失败")
+            }
+        })
     }
 </script>
 </body>

@@ -2,6 +2,7 @@ package moveon.studentManager.mapper;
 
 import moveon.studentManager.pojo.Course;
 import moveon.studentManager.pojo.StudentInfo;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -54,4 +55,16 @@ public interface TeacherMapper {
             "\tsc.sid=${sid} AND\n" +
             "\tsc.cid=(SELECT cid FROM tea_course WHERE tid=${tid}) ")
     void modifyScore(@Param("sid")String sid,@Param("tid") String tid,@Param("newScore") String newScore);
+
+    @Insert("INSERT INTO \n" +
+            "\tteacher(tid,tname,age,birthday,sex,course)\n" +
+            "VALUES\n" +
+            "\t(${tid},'${tname}',${age},'${birthday}','${sex}','${course}')\n" +
+            "ON DUPLICATE KEY UPDATE\n" +
+            "\ttname='${tname}',\n" +
+            "\tage=${age},\n" +
+            "\tbirthday='${birthday}',\n" +
+            "\tsex='${sex}',\n" +
+            "\tcourse='${course}'")
+    void updateTeacherInfo(@Param("tid") String tid,@Param("tname") String tname,@Param("age") String age,@Param("birthday") String birthday,@Param("sex") String sex,@Param("course") String course);
 }

@@ -48,4 +48,15 @@ public class TeacherController {
         String newScore = request.getParameter("newScore");
         teacherService.modifyScore(sid,tid,newScore);
     }
+
+    @RequestMapping("/updateTeacherInfo")
+    public void updateTeacherInfo(HttpServletRequest request,HttpServletResponse response){
+        String tid = request.getParameter("tid");
+        String tname = request.getParameter("tname");
+        String age = request.getParameter("age");
+        String birthday = request.getParameter("birthday");
+        String sex = request.getParameter("sex");
+        String course = request.getParameter("course");
+        teacherService.updateTeacherInfo(tid,tname,age,birthday,sex,course);
+    }
 }

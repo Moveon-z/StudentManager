@@ -28,4 +28,15 @@ public interface TeacherService {
      * @param newScore
      */
     void modifyScore(String sid,String tid,String newScore);
+
+    /**
+     * 更新教师个人信息
+     * @param tid
+     * @param tname
+     * @param age
+     * @param birthday
+     * @param sex
+     * @param course
+     */
+    void updateTeacherInfo(String tid,String tname,String age,String birthday,String sex,String course);
 }

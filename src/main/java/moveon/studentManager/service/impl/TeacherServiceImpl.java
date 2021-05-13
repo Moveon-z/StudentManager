@@ -29,4 +29,9 @@ public class TeacherServiceImpl implements TeacherService {
     public void modifyScore(String sid, String tid, String newScore) {
         teacherMapper.modifyScore(sid,tid,newScore);
     }
+
+    @Override
+    public void updateTeacherInfo(String tid, String tname, String age, String birthday, String sex, String course) {
+        teacherMapper.updateTeacherInfo(tid,tname,age,birthday,sex,course);
+    }
 }

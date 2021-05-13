@@ -26,4 +26,16 @@ public interface StudentService {
      * @param cid
      */
     void addCourse(String sid,String cid);
+
+    /**
+     * 更新学生信息
+     * @param sid
+     * @param name
+     * @param age
+     * @param cls
+     * @param birthday
+     * @param sex
+     * @param num
+     */
+    void updateStudentInfo(String sid,String name,String age,String cls,String birthday,String sex,String num);
 }

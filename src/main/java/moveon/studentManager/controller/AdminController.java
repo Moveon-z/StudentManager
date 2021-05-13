@@ -147,4 +147,11 @@ public class AdminController {
         response.setContentType("text/html;charset=utf-8");
         response.getWriter().print(json);
     }
+
+    @RequestMapping("/addCourseTeacher")
+    public void addCourseTeacher(HttpServletRequest request,HttpServletResponse response){
+        String tid = request.getParameter("tid");
+        String cid = request.getParameter("cid");
+        adminService.addCourseTeacher(tid,cid);
+    }
 }
