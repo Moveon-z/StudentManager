@@ -19,7 +19,8 @@
 <style>
 
     body{
-        background: url("${pageContext.request.contextPath}/image/sunset01.jpg") no-repeat;
+        /*background: url("${pageContext.request.contextPath}/image/111.jpg");*/
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
 
     .aaa{
@@ -28,7 +29,7 @@
 
     .aaa a{
         font-size: 17px;
-        color:skyblue;
+        color:deepskyblue;
     }
 
     #allCourse{
@@ -63,7 +64,7 @@
     <!-- 顶部导航栏 -->
     <div id="topBox" class="aaa">
         <div class="admin">
-            <input type="button" class="btn-primary" value="更新个人信息" onclick="updateStudentInfoOnclick()"
+            <input type="button" class="btn-primary" value="更新个人信息" onclick="updateStudentInfoOnclick()">
             <input type="button" class="btn-primary" value="查询课程" onclick="studentFindCourseOnclick()">
             <i class="fa fa-user-circle-o" aria-hidden="true"></i>
             <b>欢迎 ${sessionScope.sname} 同学</b>
@@ -271,7 +272,7 @@
             type: "POST",
             data: {
                 sid: ${sessionScope.sid},
-                name: ${sessionScope.sname},
+                name: "${sessionScope.sname}",
                 age: age,
                 cls: cls,
                 birthday: birthday,

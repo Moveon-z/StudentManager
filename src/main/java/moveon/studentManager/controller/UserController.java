@@ -24,6 +24,11 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/mainIndex")
+    public void mainIndex(HttpServletRequest request,HttpServletResponse response) throws IOException {
+        response.sendRedirect(request.getContextPath()+"/login.jsp");
+    }
+
     /**
      * 用户登陆主界面
      * @param model

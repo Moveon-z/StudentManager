@@ -21,7 +21,8 @@
 <style>
 
     body{
-        background: url("${pageContext.request.contextPath}/image/sunset01.jpg") no-repeat;
+        /*background: url("${pageContext.request.contextPath}/image/sunset01.jpg") no-repeat;*/
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
 
     .aaa{
@@ -30,7 +31,7 @@
 
     .aaa a{
         font-size: 17px;
-        color:skyblue;
+        color:deepskyblue;
     }
 
     #allCourse{

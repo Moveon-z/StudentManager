@@ -20,7 +20,8 @@
 <style>
 
     body{
-        background: url("${pageContext.request.contextPath}/image/sunset01.jpg") no-repeat;
+        /*background: url("${pageContext.request.contextPath}/image/sunset01.jpg") no-repeat;*/
+        background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     }
 
     .aaa{
@@ -29,7 +30,7 @@
 
     .aaa a{
         font-size: 17px;
-        color:skyblue;
+        color:deepskyblue;
     }
 
     #allCourse{
@@ -454,7 +455,7 @@
         $("#mainTbody").html("");
         $("#mainTbody").append("<tr>\n" +
             "                        <td><input type=\"text\" id=\"sidInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"sameInput\"></td>\n" +
+            "                        <td><input type=\"text\" id=\"snameInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"sageInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"sclsInput\"></td>\n" +
             "                        <td><input type=\"text\" id=\"sbirthdayInput\"></td>\n" +
@@ -506,7 +507,7 @@
         var sid = $("#sidInput").val();
         var sname = $("#snameInput").val();
         var sage = $("#sageInput").val();
-        var scls = $("#sclsInpu").val();
+        var scls = $("#sclsInput").val();
         var sbirthday = $("#sbirthdayInput").val();
         var ssex = $("#ssexInput").val();
         var snum = $("#snumInput").val();
