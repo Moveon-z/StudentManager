@@ -406,12 +406,12 @@
             "                    </tr>")
         $("#mainTbody").html("")
         $("#mainTbody").append("<tr>\n" +
-            "                        <td><input type=\"text\" id=\"CourseIdInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"CourseNameInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"CourseTeacherInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"CourseSiteInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"CourseTimeInput\"></td>\n" +
-            "                        <td><a href=\"javascript:insertCourseInfo();\">添加</a></td>\n" +
+            "                        <td><input type=\"text\" id=\"CourseIdInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"CourseNameInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"CourseTeacherInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"CourseSiteInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"CourseTimeInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><a href=\"javascript:insertCourseInfo();\" style='width:200px;height:30px'>添加</a></td>\n" +
             "                    </tr>")
     }
 
@@ -429,12 +429,12 @@
             "                    </tr>");
         $("#mainTbody").html("");
         $("#mainTbody").append("<tr>\n" +
-            "                        <td><input type=\"text\" id=\"tidInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tnameInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tageInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tbirthdayInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tsexInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"tcourseInput\"></td>\n" +
+            "                        <td><input type=\"text\" id=\"tidInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"tnameInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"tageInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"tbirthdayInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"tsexInput\" style='width:200px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"tcourseInput\" style='width:200px;height:30px'></td>\n" +
             "                        <td><a href=\"javascript:insertTeacherInfo();\">添加</a></td>\n" +
             "                    </tr>")
     }
@@ -454,13 +454,13 @@
             "                    </tr>");
         $("#mainTbody").html("");
         $("#mainTbody").append("<tr>\n" +
-            "                        <td><input type=\"text\" id=\"sidInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"snameInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"sageInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"sclsInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"sbirthdayInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"ssexInput\"></td>\n" +
-            "                        <td><input type=\"text\" id=\"snumInput\"></td>\n" +
+            "                        <td><input type=\"text\" id=\"sidInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"snameInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"sageInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"sclsInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"sbirthdayInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"ssexInput\" style='width:100px;height:30px'></td>\n" +
+            "                        <td><input type=\"text\" id=\"snumInput\" style='width:100px;height:30px'></td>\n" +
             "                        <td><a href=\"javascript:insertStudentInfo();\">添加</a></td>\n" +
             "                    </tr>")
     }
